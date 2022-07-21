@@ -1,0 +1,17 @@
+composer:
+  last: Tůma
+  first: František Ignác Antonín
+title: Vilescit mihi mundus
+subtitle: Motettum de tempore
+genre: motet
+scoring: A (solo), 2 vl, vla, b, org
+license: cc-by-sa-4.0
+sources:
+  B1:
+    siglum: A-Wn
+    shelfmark: Mus.Hs.15702
+    date: 1750
+    url: https://data.onb.ac.at/rec/AC14297597
+    license: public domain
+    principal: true
+imslp:
