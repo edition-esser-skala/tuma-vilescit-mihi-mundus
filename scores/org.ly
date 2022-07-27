@@ -6,26 +6,64 @@
 
 \book {
   \bookpart {
-    \section "1" "First"
+    \section "Vilescit mihi mundus"
     \addTocEntry
-    \paper { indent = 2\cm }
+    \paper {
+      systems-per-page = #5
+      indent = 2\cm
+    }
     \score {
       <<
+        \new ChoirStaff <<
+          \new Staff {
+            \set Staff.instrumentName = "Alto"
+            \new Voice = "Alto" { \dynamicUp \VilescitAlto }
+          }
+          \new Lyrics \lyricsto Alto \VilescitAltoLyrics
+        >>
         \new Staff {
           \set Staff.instrumentName = "Organo"
-          \xxxOrgano
+          \VilescitOrgano
         }
-        \new FiguredBass { \xxxBassFigures }
+        \new FiguredBass { \VilescitBassFigures }
       >>
     }
   }
   \bookpart {
-    \section "2" "Second"
+    \subsection "O ter beatum cor"
     \addTocEntry
     \score {
       <<
-        \new Staff { \yyyOrgano }
-        \new FiguredBass { \yyyBassFigures }
+        \new Staff { \OterOrgano }
+        \new FiguredBass { \OterBassFigures }
+      >>
+    }
+  }
+  \bookpart {
+    \subsection "Inter tanta pericla"
+    \addTocEntry
+    \paper { systems-per-page = #4 }
+    \score {
+      <<
+        \new ChoirStaff <<
+          \new Staff {
+            \set Staff.instrumentName = "A"
+            \new Voice = "Alto" { \dynamicUp \InterAlto }
+          }
+          \new Lyrics \lyricsto Alto \InterAltoLyrics
+        >>
+        \new Staff { \InterOrgano }
+        \new FiguredBass { \InterBassFigures }
+      >>
+    }
+  }
+  \bookpart {
+    \subsection "O vera sincera"
+    \addTocEntry
+    \score {
+      <<
+        \new Staff { \OveraOrgano }
+        \new FiguredBass { \OveraBassFigures }
       >>
     }
   }

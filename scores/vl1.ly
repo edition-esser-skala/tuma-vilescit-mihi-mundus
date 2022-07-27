@@ -6,24 +6,44 @@
 
 \book {
   \bookpart {
-    \section "1" "First"
+    \section "Vilescit mihi mundus"
     \addTocEntry
-    \paper { indent = 2\cm }
+    \paper {
+      systems-per-page = #5
+      indent = 2\cm
+    }
     \score {
       <<
+        \new ChoirStaff <<
+          \new Staff {
+            \set Staff.instrumentName = "Alto"
+            \new Voice = "Alto" { \dynamicUp \VilescitAlto }
+          }
+          \new Lyrics \lyricsto Alto \VilescitAltoLyrics
+        >>
         \new Staff {
           \set Staff.instrumentName = "Violino I"
-          \xxxViolinoI
+          \VilescitViolinoI
         }
       >>
     }
   }
   \bookpart {
-    \section "2" "Second"
+    \subsection "O ter beatum cor"
     \addTocEntry
     \score {
       <<
-        \new Staff { \yyyViolinoI }
+        \new Staff { \OterViolinoI }
+      >>
+    }
+    \tacet "Inter tanta pericla"
+  }
+  \bookpart {
+    \subsection "O vera sincera"
+    \addTocEntry
+    \score {
+      <<
+        \new Staff { \OveraViolinoIeII }
       >>
     }
   }

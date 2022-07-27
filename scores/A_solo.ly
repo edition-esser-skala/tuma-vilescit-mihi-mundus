@@ -1,8 +1,13 @@
 \version "2.22.0"
 
 \include "../definitions.ly"
-#(define option-instrument-name "b")
-\include "score_settings/one-staff.ly"
+\include "score_settings/coro.ly"
+
+\paper {
+  system-system-spacing.basic-distance = #20
+  system-system-spacing.minimum-distance = #20
+  systems-per-page = #6
+}
 
 \book {
   \bookpart {
@@ -22,9 +27,10 @@
           \new Lyrics \lyricsto Alto \VilescitAltoLyrics
         >>
         \new Staff {
-          \set Staff.instrumentName = "Bassi"
+          \set Staff.instrumentName = "Organo"
           \VilescitOrgano
         }
+        \new FiguredBass { \VilescitBassFigures }
       >>
     }
   }
@@ -33,7 +39,15 @@
     \addTocEntry
     \score {
       <<
+        \new ChoirStaff <<
+          \new Staff {
+            \set Staff.instrumentName = "A"
+            \new Voice = "Alto" { \dynamicUp \OterAlto }
+          }
+          \new Lyrics \lyricsto Alto \OterAltoLyrics
+        >>
         \new Staff { \OterOrgano }
+        \new FiguredBass { \OterBassFigures }
       >>
     }
   }
@@ -51,6 +65,7 @@
           \new Lyrics \lyricsto Alto \InterAltoLyrics
         >>
         \new Staff { \InterOrgano }
+        \new FiguredBass { \InterBassFigures }
       >>
     }
   }
@@ -59,7 +74,15 @@
     \addTocEntry
     \score {
       <<
+        \new ChoirStaff <<
+          \new Staff {
+            \set Staff.instrumentName = "A"
+            \new Voice = "Alto" { \dynamicUp \OveraAlto }
+          }
+          \new Lyrics \lyricsto Alto \OveraAltoLyrics
+        >>
         \new Staff { \OveraOrgano }
+        \new FiguredBass { \OveraBassFigures }
       >>
     }
   }
