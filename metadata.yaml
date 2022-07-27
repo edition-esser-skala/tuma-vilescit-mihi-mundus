@@ -14,4 +14,7 @@ sources:
     url: https://data.onb.ac.at/rec/AC14297597
     license: public domain
     principal: true
+    notes: parts for A solo, vl 1 (2×), vl 2 (2×), vla, vlc, vlne, org, and maestro di cappella
 imslp:
+parts:
+  A_solo: Alto solo
